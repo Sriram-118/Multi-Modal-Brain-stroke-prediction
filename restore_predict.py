@@ -1,0 +1,286 @@
+#!/usr/bin/env python3
+"""Restore Predict.html template with modern styling"""
+
+from pathlib import Path
+
+template_content = '''{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Predict Stroke - Multi-Modal Stroke Prediction{% endblock %}
+
+{% block extra_css %}
+<style>
+.prediction-form-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.form-section {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.form-section h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.file-upload-area {
+    border: 2px dashed #3498db;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.file-upload-area:hover {
+    border-color: #2980b9;
+    background: #e9ecef;
+}
+
+.file-upload-area.drag-over {
+    border-color: #27ae60;
+    background: #d4edda;
+}
+
+.image-preview {
+    max-width: 300px;
+    max-height: 300px;
+    margin: 1rem auto;
+    display: none;
+}
+
+.image-preview img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.submit-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-predict {
+    padding: 0.75rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="prediction-form-container">
+    <div class="text-center mb-4">
+        <h1 class="display-5 fw-bold text-primary">Stroke Prediction</h1>
+        <p class="lead text-muted">Enter clinical data and upload brain scan image for multi-modal prediction</p>
+    </div>
+
+    {% if data %}
+    <div class="alert alert-info" role="alert">
+        {{ data|safe }}
+    </div>
+    {% endif %}
+
+    <form name="f1" method="post" action="{% url 'PredictAction' %}" enctype="multipart/form-data" class="needs-validation" novalidate>
+        {% csrf_token %}
+        
+        <!-- Clinical Data Section -->
+        <div class="form-section">
+            <h2><i class="fas fa-user-md"></i> Clinical Information</h2>
+            
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="t1" class="form-label">Gender</label>
+                    <select class="form-select" id="t1" name="t1" required>
+                        <option value="">Select gender...</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a gender.
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="t2" class="form-label">Age (years)</label>
+                    <input type="number" class="form-control" id="t2" name="t2" min="0" max="120" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid age.
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="t3" class="form-label">Hypertension</label>
+                    <select class="form-select" id="t3" name="t3" required>
+                        <option value="">Select...</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select hypertension status.
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="t4" class="form-label">Average Glucose Level (mg/dL)</label>
+                    <input type="number" class="form-control" id="t4" name="t4" min="0" step="0.01" required>
+                    <div class="invalid-feedback">
+                        Please enter average glucose level.
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="t5" class="form-label">BMI (Body Mass Index)</label>
+                    <input type="number" class="form-control" id="t5" name="t5" min="0" step="0.1" required>
+                    <div class="invalid-feedback">
+                        Please enter BMI value.
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="t6" class="form-label">Smoking Status</label>
+                    <select class="form-select" id="t6" name="t6" required>
+                        <option value="">Select smoking status...</option>
+                        <option value="smokes">Currently Smokes</option>
+                        <option value="formerly smoked">Formerly Smoked</option>
+                        <option value="never smoked">Never Smoked</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select smoking status.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Upload Section -->
+        <div class="form-section">
+            <h2><i class="fas fa-image"></i> Brain Scan Image</h2>
+            
+            <div class="file-upload-area" id="fileUploadArea">
+                <i class="fas fa-cloud-upload-alt fa-3x text-primary mb-3"></i>
+                <p class="mb-2">Drag and drop your brain scan image here, or click to browse</p>
+                <input type="file" class="form-control" id="t7" name="t7" accept="image/*" required style="display: none;">
+                <button type="button" class="btn btn-outline-primary" onclick="document.getElementById('t7').click()">
+                    <i class="fas fa-folder-open"></i> Choose File
+                </button>
+                <div class="invalid-feedback d-block" id="fileError" style="display: none !important;">
+                    Please upload a brain scan image.
+                </div>
+            </div>
+
+            <div class="image-preview" id="imagePreview">
+                <img id="previewImg" src="" alt="Image preview">
+                <p class="text-center mt-2" id="fileName"></p>
+            </div>
+        </div>
+
+        <!-- Submit Section -->
+        <div class="submit-section">
+            <button type="submit" class="btn btn-primary btn-lg btn-predict">
+                <i class="fas fa-brain"></i> Predict Stroke Risk
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+// Form validation
+(function() {
+    'use strict';
+    
+    const form = document.querySelector('form[name="f1"]');
+    const fileInput = document.getElementById('t7');
+    const fileUploadArea = document.getElementById('fileUploadArea');
+    const imagePreview = document.getElementById('imagePreview');
+    const previewImg = document.getElementById('previewImg');
+    const fileName = document.getElementById('fileName');
+    const fileError = document.getElementById('fileError');
+    
+    // File upload handling
+    fileInput.addEventListener('change', function(e) {
+        handleFileSelect(e.target.files);
+    });
+    
+    // Drag and drop
+    fileUploadArea.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        fileUploadArea.classList.add('drag-over');
+    });
+    
+    fileUploadArea.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        fileUploadArea.classList.remove('drag-over');
+    });
+    
+    fileUploadArea.addEventListener('drop', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        fileUploadArea.classList.remove('drag-over');
+        
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            fileInput.files = files;
+            handleFileSelect(files);
+        }
+    });
+    
+    function handleFileSelect(files) {
+        if (files.length > 0) {
+            const file = files[0];
+            
+            // Validate file type
+            if (!file.type.startsWith('image/')) {
+                alert('Please upload an image file.');
+                fileInput.value = '';
+                return;
+            }
+            
+            // Show preview
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                previewImg.src = e.target.result;
+                fileName.textContent = file.name;
+                imagePreview.style.display = 'block';
+                fileError.style.display = 'none';
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+    
+    // Form submission validation
+    form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        
+        // Check file upload
+        if (!fileInput.files || fileInput.files.length === 0) {
+            event.preventDefault();
+            event.stopPropagation();
+            fileError.style.display = 'block';
+            fileUploadArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        form.classList.add('was-validated');
+    }, false);
+})();
+</script>
+{% endblock %}
+'''
+
+# Write the file
+output_path = Path('StrokeApp/templates/Predict.html')
+output_path.write_text(template_content, encoding='utf-8')
+print(f"Successfully wrote Predict.html ({len(template_content)} bytes)")

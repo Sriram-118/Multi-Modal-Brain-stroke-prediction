@@ -1,0 +1,21 @@
+gender,age,hypertension,avg_glucose_level,bmi,smoking_status
+Male,67,0,228.69,36.6,formerly smoked
+Female,61,0,202.21,,never smoked
+Male,80,0,105.92,32.5,never smoked
+Female,49,0,171.23,34.4,smokes
+Female,79,1,174.12,24.0,never smoked
+Female,31,0,80.79,28.7,
+Male,72,1,114.01,31.8,formerly smoked
+Male,23,0,93.74,31.2,never smoked
+Male,81,0,186.21,29.0,formerly smoked
+Female,25,0,90.65,20.9,
+Male,51,0,98.41,32.1,never smoked
+Male,74,1,70.09,27.4,never smoked
+Female,20,0,127.18,31.0,
+Female,12,0,138.06,23.1,
+Male,57,0,89.44,26.7,never smoked
+Male,65,0,105.61,27.9,
+Female,16,0,155.43,27.3,never smoked
+Female,43,0,80.83,51.5,
+Female,30,0,80.19,20.4,never smoked
+Male,29,0,60.34,29.6,formerly smoked

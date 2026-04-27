@@ -1,0 +1,39 @@
+{
+  "name": "stroke-prediction-ui",
+  "version": "1.0.0",
+  "description": "Modern UI for Multi-Modal Stroke Prediction Django Application",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "dev": "tsc --watch",
+    "lint": "eslint StrokeApp/static/js/**/*.js",
+    "format": "prettier --write StrokeApp/static/js/**/*.js StrokeApp/static/css/**/*.css"
+  },
+  "keywords": [
+    "django",
+    "typescript",
+    "bootstrap",
+    "medical",
+    "machine-learning",
+    "ui"
+  ],
+  "author": "Stroke Prediction Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chart.js": "^2.9.37",
+    "eslint": "^8.45.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.0",
+    "chart.js": "^4.3.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}

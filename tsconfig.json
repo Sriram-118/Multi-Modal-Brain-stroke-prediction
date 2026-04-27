@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "ES2015",
+    "lib": ["ES2017", "DOM", "DOM.Iterable"],
+    "outDir": "./StrokeApp/static/js/compiled",
+    "rootDir": "./src/typescript",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "removeComments": false,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitThis": true,
+    "useUnknownInCatchVariables": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/typescript/*"],
+      "@components/*": ["./src/typescript/components/*"],
+      "@utils/*": ["./src/typescript/utils/*"],
+      "@types/*": ["./src/typescript/types/*"]
+    }
+  },
+  "include": [
+    "src/typescript/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "StrokeApp/static/js/compiled",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ]
+}
