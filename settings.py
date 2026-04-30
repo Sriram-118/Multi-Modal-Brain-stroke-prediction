@@ -140,3 +140,4 @@ CACHE_MIDDLEWARE_KEY_PREFIX = 'stroke_app'
 # Static files caching headers (for production)
 # Uncomment in production with a proper static file server
 # STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+ALLOWED_HOSTS = ['*']
