@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Stroke Prediction System - Home{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hero { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 5rem 0; border-radius: 0 0 2rem 2rem; }
+    .feature-card { transition: transform 0.2s; cursor: default; }
+    .feature-card:hover { transform: translateY(-5px); }
+    .feature-icon { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1rem; }
+    .step-num { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; margin: 0 auto 0.5rem; }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<div class="hero text-center mb-5" style="margin: -2rem -12px 0; padding-left: 12px; padding-right: 12px;">
+    <div class="container">
+        <h1 class="display-5 fw-bold mb-3"><i class="fas fa-brain me-3"></i>Multi-Modal Stroke Prediction</h1>
+        <p class="lead mb-4 opacity-90">AI-powered stroke risk assessment combining CNN image analysis and LSTM clinical data processing</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="{% url 'UserLogin' %}" class="btn btn-light btn-lg px-4 fw-semibold">
+                <i class="fas fa-sign-in-alt me-2"></i>Login
+            </a>
+            <a href="{% url 'Register' %}" class="btn btn-outline-light btn-lg px-4">
+                <i class="fas fa-user-plus me-2"></i>Register
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Features -->
+<div class="row g-4 mb-5">
+    <div class="col-md-4">
+        <div class="card feature-card h-100 text-center p-4">
+            <div class="feature-icon bg-primary bg-opacity-10 text-primary mx-auto">
+                <i class="fas fa-eye"></i>
+            </div>
+            <h5 class="fw-bold">CNN Image Analysis</h5>
+            <p class="text-muted">Convolutional Neural Networks analyze brain scans to detect stroke indicators with high precision.</p>
+            <span class="badge bg-primary">Deep Learning</span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card feature-card h-100 text-center p-4">
+            <div class="feature-icon bg-success bg-opacity-10 text-success mx-auto">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h5 class="fw-bold">LSTM Clinical Analysis</h5>
+            <p class="text-muted">Long Short-Term Memory networks process clinical parameters like age, BMI, and glucose levels.</p>
+            <span class="badge bg-success">Time Series</span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card feature-card h-100 text-center p-4">
+            <div class="feature-icon bg-warning bg-opacity-10 text-warning mx-auto">
+                <i class="fas fa-project-diagram"></i>
+            </div>
+            <h5 class="fw-bold">Multi-Modal Fusion</h5>
+            <p class="text-muted">Combines image and clinical data for comprehensive risk assessment with improved accuracy.</p>
+            <span class="badge bg-warning text-dark">Ensemble</span>
+        </div>
+    </div>
+</div>
+
+<!-- How it works -->
+<div class="card p-4 mb-4" style="border-left: 4px solid #1e3a8a;">
+    <h4 class="fw-bold text-center mb-4"><i class="fas fa-list-ol me-2 text-primary"></i>How It Works</h4>
+    <div class="row g-4 text-center">
+        <div class="col-md-4">
+            <div class="step-num bg-primary text-white mx-auto mb-3">1</div>
+            <div class="feature-icon bg-primary bg-opacity-10 text-primary mx-auto mb-2">
+                <i class="fas fa-clipboard-list"></i>
+            </div>
+            <h6 class="fw-bold">Enter Clinical Data</h6>
+            <p class="text-muted small">Input age, gender, BMI, glucose levels, hypertension and smoking history.</p>
+        </div>
+        <div class="col-md-4">
+            <div class="step-num bg-success text-white mx-auto mb-3">2</div>
+            <div class="feature-icon bg-success bg-opacity-10 text-success mx-auto mb-2">
+                <i class="fas fa-x-ray"></i>
+            </div>
+            <h6 class="fw-bold">Upload Brain Scan</h6>
+            <p class="text-muted small">Upload a medical image for CNN analysis.</p>
+        </div>
+        <div class="col-md-4">
+            <div class="step-num bg-warning text-dark mx-auto mb-3">3</div>
+            <div class="feature-icon bg-warning bg-opacity-10 text-warning mx-auto mb-2">
+                <i class="fas fa-robot"></i>
+            </div>
+            <h6 class="fw-bold">Get AI Prediction</h6>
+            <p class="text-muted small">Receive instant stroke risk assessment with probability scores.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
