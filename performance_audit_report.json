@@ -1,0 +1,258 @@
+{
+  "timestamp": "2026-03-08T13:40:03.873471",
+  "file_analysis": {
+    "StrokeApp\\static\\css\\browser-fallbacks.css": {
+      "type": "CSS",
+      "size_bytes": 6783,
+      "size_kb": 6.62
+    },
+    "StrokeApp\\static\\css\\browser-fallbacks.min.css": {
+      "type": "CSS",
+      "size_bytes": 4415,
+      "size_kb": 4.31
+    },
+    "StrokeApp\\static\\css\\modern.css": {
+      "type": "CSS",
+      "size_bytes": 34167,
+      "size_kb": 33.37
+    },
+    "StrokeApp\\static\\css\\modern.min.css": {
+      "type": "CSS",
+      "size_bytes": 23347,
+      "size_kb": 22.8
+    },
+    "StrokeApp\\static\\js\\accessibility.js": {
+      "type": "JavaScript",
+      "size_bytes": 11800,
+      "size_kb": 11.52
+    },
+    "StrokeApp\\static\\js\\accessibility.min.js": {
+      "type": "JavaScript",
+      "size_bytes": 8836,
+      "size_kb": 8.63
+    },
+    "StrokeApp\\static\\js\\chart-utils.js": {
+      "type": "JavaScript",
+      "size_bytes": 11840,
+      "size_kb": 11.56
+    },
+    "StrokeApp\\static\\js\\chart-utils.min.js": {
+      "type": "JavaScript",
+      "size_bytes": 8126,
+      "size_kb": 7.94
+    },
+    "StrokeApp\\static\\js\\file-upload.js": {
+      "type": "JavaScript",
+      "size_bytes": 11773,
+      "size_kb": 11.5
+    },
+    "StrokeApp\\static\\js\\file-upload.min.js": {
+      "type": "JavaScript",
+      "size_bytes": 9444,
+      "size_kb": 9.22
+    },
+    "StrokeApp\\static\\js\\form-validation.js": {
+      "type": "JavaScript",
+      "size_bytes": 15337,
+      "size_kb": 14.98
+    },
+    "StrokeApp\\static\\js\\form-validation.min.js": {
+      "type": "JavaScript",
+      "size_bytes": 11607,
+      "size_kb": 11.33
+    },
+    "StrokeApp\\static\\js\\modern.js": {
+      "type": "JavaScript",
+      "size_bytes": 12078,
+      "size_kb": 11.79
+    },
+    "StrokeApp\\static\\js\\modern.min.js": {
+      "type": "JavaScript",
+      "size_bytes": 9220,
+      "size_kb": 9.0
+    },
+    "StrokeApp\\static\\js\\navigation.js": {
+      "type": "JavaScript",
+      "size_bytes": 11484,
+      "size_kb": 11.21
+    },
+    "StrokeApp\\static\\js\\navigation.min.js": {
+      "type": "JavaScript",
+      "size_bytes": 7036,
+      "size_kb": 6.87
+    },
+    "StrokeApp\\static\\js\\page-transitions.js": {
+      "type": "JavaScript",
+      "size_bytes": 9798,
+      "size_kb": 9.57
+    },
+    "StrokeApp\\static\\js\\page-transitions.min.js": {
+      "type": "JavaScript",
+      "size_bytes": 7133,
+      "size_kb": 6.97
+    },
+    "StrokeApp\\static\\js\\performance-monitor.js": {
+      "type": "JavaScript",
+      "size_bytes": 4448,
+      "size_kb": 4.34
+    },
+    "StrokeApp\\static\\js\\performance-monitor.min.js": {
+      "type": "JavaScript",
+      "size_bytes": 3006,
+      "size_kb": 2.94
+    },
+    "StrokeApp\\static\\js\\performance.js": {
+      "type": "JavaScript",
+      "size_bytes": 13533,
+      "size_kb": 13.22
+    },
+    "StrokeApp\\static\\js\\performance.min.js": {
+      "type": "JavaScript",
+      "size_bytes": 9744,
+      "size_kb": 9.52
+    },
+    "StrokeApp\\static\\js\\polyfills.js": {
+      "type": "JavaScript",
+      "size_bytes": 11465,
+      "size_kb": 11.2
+    },
+    "StrokeApp\\static\\js\\polyfills.min.js": {
+      "type": "JavaScript",
+      "size_bytes": 6780,
+      "size_kb": 6.62
+    },
+    "StrokeApp\\static\\js\\prediction-chart.js": {
+      "type": "JavaScript",
+      "size_bytes": 13834,
+      "size_kb": 13.51
+    },
+    "StrokeApp\\static\\js\\prediction-chart.min.js": {
+      "type": "JavaScript",
+      "size_bytes": 9851,
+      "size_kb": 9.62
+    },
+    "StrokeApp\\static\\js\\security.js": {
+      "type": "JavaScript",
+      "size_bytes": 18589,
+      "size_kb": 18.15
+    },
+    "StrokeApp\\static\\js\\security.min.js": {
+      "type": "JavaScript",
+      "size_bytes": 10422,
+      "size_kb": 10.18
+    },
+    "StrokeApp\\static\\images\\back.jpg": {
+      "type": "Image",
+      "size_bytes": 902,
+      "size_kb": 0.88
+    },
+    "StrokeApp\\static\\images\\tra.jpg": {
+      "type": "Image",
+      "size_bytes": 11905,
+      "size_kb": 11.63
+    },
+    "StrokeApp\\static\\0.png": {
+      "type": "Image",
+      "size_bytes": 385931,
+      "size_kb": 376.89
+    },
+    "StrokeApp\\static\\1.png": {
+      "type": "Image",
+      "size_bytes": 184252,
+      "size_kb": 179.93
+    },
+    "StrokeApp\\static\\9487.png": {
+      "type": "Image",
+      "size_bytes": 243837,
+      "size_kb": 238.12
+    },
+    "StrokeApp\\static\\files\\1.jfif": {
+      "type": "Image",
+      "size_bytes": 6189,
+      "size_kb": 6.04
+    },
+    "StrokeApp\\static\\files\\2.jfif": {
+      "type": "Image",
+      "size_bytes": 8130,
+      "size_kb": 7.94
+    }
+  },
+  "optimization_recommendations": [
+    {
+      "file": "browser-fallbacks.css",
+      "issue": "File not minified",
+      "recommendation": "Minify to reduce file size by 20-40%"
+    },
+    {
+      "file": "modern.css",
+      "issue": "File not minified",
+      "recommendation": "Minify to reduce file size by 20-40%"
+    },
+    {
+      "file": "accessibility.js",
+      "issue": "File not minified",
+      "recommendation": "Minify to reduce file size by 20-40%"
+    },
+    {
+      "file": "chart-utils.js",
+      "issue": "File not minified",
+      "recommendation": "Minify to reduce file size by 20-40%"
+    },
+    {
+      "file": "file-upload.js",
+      "issue": "File not minified",
+      "recommendation": "Minify to reduce file size by 20-40%"
+    },
+    {
+      "file": "form-validation.js",
+      "issue": "File not minified",
+      "recommendation": "Minify to reduce file size by 20-40%"
+    },
+    {
+      "file": "modern.js",
+      "issue": "File not minified",
+      "recommendation": "Minify to reduce file size by 20-40%"
+    },
+    {
+      "file": "navigation.js",
+      "issue": "File not minified",
+      "recommendation": "Minify to reduce file size by 20-40%"
+    },
+    {
+      "file": "page-transitions.js",
+      "issue": "File not minified",
+      "recommendation": "Minify to reduce file size by 20-40%"
+    },
+    {
+      "file": "performance-monitor.js",
+      "issue": "File not minified",
+      "recommendation": "Minify to reduce file size by 20-40%"
+    },
+    {
+      "file": "performance.js",
+      "issue": "File not minified",
+      "recommendation": "Minify to reduce file size by 20-40%"
+    },
+    {
+      "file": "polyfills.js",
+      "issue": "File not minified",
+      "recommendation": "Minify to reduce file size by 20-40%"
+    },
+    {
+      "file": "prediction-chart.js",
+      "issue": "File not minified",
+      "recommendation": "Minify to reduce file size by 20-40%"
+    },
+    {
+      "file": "security.js",
+      "issue": "File not minified",
+      "recommendation": "Minify to reduce file size by 20-40%"
+    }
+  ],
+  "performance_metrics": {
+    "overall_score": 30,
+    "total_files_analyzed": 35,
+    "total_issues_found": 14,
+    "status": "Needs Improvement"
+  }
+}
